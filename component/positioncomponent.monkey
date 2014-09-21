@@ -69,6 +69,8 @@ Class PositionComponent Extends Component Implements IPosition
     Method New(x:Float, y:Float)
         _vector = New Vector(x, y)
         _tmpVector = New Vector()
+        
+        Name = "PositionComponent"
     End
     
     Method Finalize:Void()

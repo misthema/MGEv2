@@ -22,11 +22,13 @@ Class MovementComponent Extends Component Implements IMovement
         Acceleration.Set(0, 0)
     End
     
-    Method New(maxVelX:Float, maxVelY:Float)
+    Method New(frictionX:Float = 0, frictionY:Float = 0, maxVelX:Float = 10000, maxVelY:Float = 10000)
         _velocity = New Vector()
         _acceleration = New Vector()
-        _friction = New Vector()
+        _friction = New Vector(frictionX, frictionY)
         _maxVelocity = New Vector(maxVelX, maxVelY)
+        
+        Name = "MovementComponent"
     End
     
     Method Finalize:Void()

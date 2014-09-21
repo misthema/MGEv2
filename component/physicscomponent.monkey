@@ -16,6 +16,10 @@ Class PhysicsComponent Extends Component Implements IPhysics
     Method Movement:IMovement() Property Return _movement End
     Method Gravity:IGravity() Property Return _gravity End
     
+    Method New()
+        Name = "PhysicsComponent"
+    End
+    
     Method Initialize:Void(owner:IEntity)
         Super.Initialize(owner)
         
@@ -24,11 +28,6 @@ Class PhysicsComponent Extends Component Implements IPhysics
             If IMovement(comp) Then _movement = IMovement(comp)
             If IGravity(comp) Then _gravity = IGravity(comp)
         Next
-        
-        If _position = Null Then Error("Entity has no PositionComponent!")
-        If _movement = Null Then Error("Entity has no MovementComponent!")
-        If _gravity = Null Then Error("Entity has no GravityComponent!")
-        
     End
     
     Method Finalize:Void()
@@ -41,5 +40,6 @@ Class PhysicsComponent Extends Component Implements IPhysics
         Field _position:IPosition
         Field _movement:IMovement
         Field _gravity:IGravity
+        
 End
 

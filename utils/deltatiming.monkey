@@ -23,9 +23,12 @@ Class DeltaTimer
     Method OnUpdate:Void()
         If paused Then Return
 
-        _millisecs = Millisecs() - pauseOffset
+        ' Fix?
+        pauseOffset = 0
+        
+        _millisecs = Millisecs() '- pauseOffset
         _frameTime = _millisecs - lastMillisecs
-        _delta = frameTime / (1000.0 / targetFps)
+        _delta = _frameTime / 1000.0
         lastMillisecs = _millisecs
     End
 

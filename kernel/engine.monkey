@@ -95,6 +95,7 @@ Class _Engine Extends App
         DrawText("Average update time: " + String(avrUpdateTime)[ .. 5] + "ms", 2, 2)
         DrawText("Min: " + String(avrMin)[ .. 5] + "ms", 2, 14)
         DrawText("Max: " + String(avrMax)[ .. 5] + "ms", 2, 26)
+        DrawText("FrameTime: " + clock.frameTime, 2, 38)
         
         DrawText("Total components: " + compCount, 320, 2)
         DrawText("Bundles for systems: " + updatedComps, 320, 14)

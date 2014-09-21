@@ -13,6 +13,7 @@ Class GravityComponent Extends Component Implements IGravity
     
     Method New(gravityX:Float, gravityY:Float)
         _force = New Vector(gravityX, gravityY)
+        Name = "GravityComponent"
     End
     
     Method Finalize:Void()

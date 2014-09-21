@@ -20,5 +20,5 @@ Function ComputeVelocity:Float(Velocity:Float, Acceleration:Float = 0, Drag:Floa
         End
     End
         
-    Return Velocity * delta
+    Return Velocity
 End

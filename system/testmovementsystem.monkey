@@ -10,12 +10,6 @@ Class PhysicsSystem Extends System<IPhysics>
     
     Method OnUpdate:Void(delta:Float)
         For Local phys:IPhysics = EachIn ComponentList()
-            If phys.Position.X > DeviceWidth() Then
-                phys.Position.X = 0
-            End
-            If phys.Position.Y > DeviceHeight() Then
-                phys.Position.Y = 0
-            End
             ComputeVelocities(phys, delta)
             ApplyGravity(phys, delta)
             ApplyVelocity(phys, delta)

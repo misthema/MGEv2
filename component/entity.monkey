@@ -10,6 +10,7 @@ Interface IEntity
     Method Finalize:Void()
     Method AddComponent:Void(comp:IComponent)
     Method RemoveComponent:Void(comp:IComponent)
+    Method GetComponent:IComponent(name:String)
 End
 
 Class Entity Implements IEntity
@@ -17,6 +18,10 @@ Class Entity Implements IEntity
     Method Parent:IEntity() Property Return _parent End
     Method Components:List<IComponent>() Property Return _components End
     Method Children:List<IEntity>() Property Return _children End
+    
+    Method GetComponent:IComponent(name:String)
+        Return _componentMap.Get(name)
+    End
     
     Method Initialize:Void(parent:IEntity = Null)
         _parent = parent
@@ -48,14 +53,17 @@ Class Entity Implements IEntity
     
     Method AddComponent:Void(comp:IComponent)
         _components.AddLast(comp)
+        _componentMap.Set(comp.Name, comp)
     End
     
     Method RemoveComponent:Void(comp:IComponent)
         _components.RemoveEach(comp)
+        _componentMap.Remove(comp.Name)
     End
     
     Private
         Field _components:= New List<IComponent>
+        Field _componentMap:= New StringMap<IComponent>
         Field _children:= New List<IEntity>
         Field _parent:IEntity
 End
