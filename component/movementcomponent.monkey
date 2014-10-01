@@ -1,7 +1,7 @@
 Strict
 
 Import mgev2.component.component
-Import mgev2.utils.vector
+Import mgev2.utils.math.vector
 
 Interface IMovement
     Method Velocity:Vector() Property

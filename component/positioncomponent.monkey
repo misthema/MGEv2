@@ -1,7 +1,7 @@
 Strict
 
 Import mgev2.component.component
-Import mgev2.utils.vector
+Import mgev2.utils.math.vector
 
 Interface IPosition
     Method X:Void(value:Float) Property
@@ -55,7 +55,7 @@ Class PositionComponent Extends Component Implements IPosition
     
     Method AngleTo:Float(x:Float, y:Float)
         _tmpVector.Set(x, y)
-        Return _vector.AngleTo(tmpVector)
+        Return _vector.AngleTo(_tmpVector)
     End
     
     Method AngleTo:Float(other:IPosition)

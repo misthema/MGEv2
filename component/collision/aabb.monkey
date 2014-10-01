@@ -2,6 +2,7 @@ Strict
 
 Import mgev2.component.component
 Import mgev2.component.sizecomponent
+Import mgev2.component.collision.collisionresponse
 
 Interface IAABB
     Method MinX:Float() Property
@@ -100,10 +101,10 @@ Class CollisionComponent Extends Component Implements IAABB
     Method MaxY:Void(value:Float) Property _position.Y = value - _size.Height End
     
     Method GetCenterX:Float()
-        Return Float(MaxX - MinX) / 2.0
+        Return MinX + Width / 2.0
     End
     Method GetCenterY:Float()
-        Return Float(MaxY - MinY) / 2.0
+        Return MinY + Height / 2.0
     End
     
     Method Width:Float() Property
@@ -148,9 +149,17 @@ Class CollisionComponent Extends Component Implements IAABB
         End
     End
     
+    Method New(colResponse:ICollisionResponse = Null)
+        _colResponse = colResponse
+    End
+    
+    Method CollisionResponseCallback:ICollisionResponse() Property
+        Return _colResponse
+    End
     
     Private
         Field _position:IPosition
         Field _size:ISize
         Field _area:IAABB
+        Field _colResponse:ICollisionResponse
 End

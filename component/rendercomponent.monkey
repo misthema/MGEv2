@@ -105,7 +105,7 @@ Class BasicDisplayObject Extends Component Implements IRender, IColorable
         _visible = True
         _alpha = 1.0
         _layer = DEFAULT_LAYER
-        _size = New SizeComponent(16, 16)
+        _size = New SizeComponent(8, 8)
         _color = New Color(255, 255, 255)
     End
     

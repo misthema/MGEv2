@@ -5,7 +5,7 @@ Import mgev2.component.collision.aabb
 Interface IQuadtree
     Method New(level:Int, bounds:IAABB)
     Method Split:Void()
-    Method Insert:Void(area:IAABB)
+    Method Insert:Bool(area:IAABB)
     Method GetIndex:Int(area:IAABB)
     Method Retrieve:Void(returnObjects:List<IAABB>, area:IAABB)
     Method Clear:Void()
@@ -78,14 +78,42 @@ Class Quadtree<T> Implements IQuadtree
         Return index
     End
     
+    #REM
     Method Retrieve:Void(returnObjects:List<T>, area:T)
+        ' We aren't inside this node
+        If not IAABB(area).IntersectAABB(_bounds) Then Return
+        
+        ' See if we hit objects in this node
+        For Local obj:T = EachIn _objects
+            If IAABB(area).IntersectAABB(IAABB(obj)) Then
+                returnObjects.AddLast(obj)
+            End
+        Next
+    
+        ' See what node we're continuing to
         Local index:Int = GetIndex(area)
         
         If index <> - 1 And _nodes[0] <> Null Then
             _nodes[index].Retrieve(returnObjects, area)
         End
+    End
+    #END
+    
+    Method Retrieve:Void(returnObjects:List<T>, area:T)
+        If Not _bounds.IntersectAABB(area) Then Return
         
-        MergeLists(returnObjects, _objects)
+        For Local obj:T = EachIn _objects
+            If IAABB(area).IntersectAABB(IAABB(obj)) Then
+                returnObjects.AddLast(obj)
+            End
+        Next
+        
+        If _nodes[0] = Null Then Return
+        
+        _nodes[0].Retrieve(returnObjects, area)
+        _nodes[1].Retrieve(returnObjects, area)
+        _nodes[2].Retrieve(returnObjects, area)
+        _nodes[3].Retrieve(returnObjects, area)
     End
     
     Method MergeLists:Void(toThis:List<T>, fromThis:List<T>)
@@ -94,6 +122,7 @@ Class Quadtree<T> Implements IQuadtree
         Next
     End
     
+    #REM
     Method Insert:Void(area:T)
         If _nodes[0] <> Null Then
             Local index:Int = GetIndex(area)
@@ -126,6 +155,27 @@ Class Quadtree<T> Implements IQuadtree
             Wend
         End
     End
+    #END
+    
+    Method Insert:Bool(area:T)
+        If Not _bounds.IntersectAABB(area) Then Return False
+        
+        If _objects.Count() < _maxObjects Then
+            _objects.AddLast(area)
+            Return True
+        End
+        
+        If _nodes[0] = Null Then
+            Split()
+        End
+        
+        If _nodes[0].Insert(area) Then Return True
+        If _nodes[1].Insert(area) Then Return True
+        If _nodes[2].Insert(area) Then Return True
+        If _nodes[3].Insert(area) Then Return True
+        
+        Return False
+    End
     
     Method GetNodes:Quadtree<T>[] ()
         Return _nodes
@@ -149,7 +199,7 @@ Class Quadtree<T> Implements IQuadtree
     
     
     Private
-        Field _maxObjects:Int = 4, _maxLevels:Int = 5
+        Field _maxObjects:Int = 10, _maxLevels:Int = 7
         Field _level:Int
         Field _objects:List<T>
         Field _bounds:IAABB

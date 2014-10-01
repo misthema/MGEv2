@@ -14,15 +14,15 @@ Class CollisionSystem Extends System<CollisionComponent> Implements IRenderable
     Method New()
         Super.New()
         
-        _quadtree = New Quadtree<CollisionComponent>(0, New AABB(0, 0, 640, 480))
+        _quadtree = New Quadtree<CollisionComponent>(0, New AABB(0, 0, 800, 600))
         _returnObjects = New List<CollisionComponent>()
     End
     
     Method OnRender:Void()
-        DrawText("Rendering Quadtree Nodes",2,468)
-        SetColor(96, 96, 96)
+        SetColor(64, 128, 64)
         RenderNode(_quadtree)
         SetColor(255, 255, 255)
+        DrawText("Rendering Quadtree Nodes", 2, 588)
     End
     
     Method RenderNode:Void(quad:Quadtree<CollisionComponent>)
@@ -46,6 +46,10 @@ Class CollisionSystem Extends System<CollisionComponent> Implements IRenderable
         
         For area = EachIn ComponentList()
             _quadtree.Insert(area)
+
+            Local tmpColor2:IColorable = IColorable(area.Owner.GetComponent("DisplayObject"))
+
+            If tmpColor2 <> Null Then tmpColor2.Colorize(255, 255, 255)
         Next
         
         
@@ -56,16 +60,22 @@ Class CollisionSystem Extends System<CollisionComponent> Implements IRenderable
             For Local obj:CollisionComponent = EachIn _returnObjects
                 If obj = area Then Continue
                 
+                #REM
                 Local tmpColor1:IColorable = IColorable(obj.Owner.GetComponent("DisplayObject"))
                 Local tmpColor2:IColorable = IColorable(area.Owner.GetComponent("DisplayObject"))
-                
+
+                If tmpColor1 <> Null Then tmpColor1.Colorize(255, 255, 255)
+                If tmpColor2 <> Null Then tmpColor2.Colorize(255, 255, 255)
+                #END
+                                
                 If obj.IntersectAABB(area) Then
-                    If tmpColor1 <> Null Then tmpColor1.Colorize(255, 0, 0)
-                    If tmpColor2 <> Null Then tmpColor2.Colorize(255, 0, 0)
-                Else
-                    If tmpColor1 <> Null Then tmpColor1.Colorize(255, 255, 255)
-                    If tmpColor2 <> Null Then tmpColor2.Colorize(255, 255, 255)
+                    'If tmpColor1 <> Null Then tmpColor1.Colorize(255, 0, 0)
+                    'If tmpColor2 <> Null Then tmpColor2.Colorize(255, 0, 0)
+                    If area.CollisionResponseCallback <> Null Then
+                        area.CollisionResponseCallback.onCallback(area.Owner, obj.Owner)
+                    End
                 End
+                
             Next
         Next
     End

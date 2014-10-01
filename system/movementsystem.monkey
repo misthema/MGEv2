@@ -16,6 +16,13 @@ Class PhysicsSystem Extends System<IPhysics>
             If phys.Position.Y > DeviceHeight() Then
                 phys.Position.Y = 0
             End
+            If phys.Position.X < 0 Then
+                phys.Position.X = DeviceWidth()
+            End
+            If phys.Position.Y < 0 Then
+                phys.Position.Y = DeviceHeight()
+            End
+            
             ComputeVelocities(phys, delta)
             ApplyGravity(phys, delta)
             ApplyVelocity(phys, delta)
@@ -25,7 +32,7 @@ Class PhysicsSystem Extends System<IPhysics>
     Method ComputeVelocities:Void(phys:IPhysics, delta:Float)
         If phys.Movement = Null Then Return
         
-        
+        If phys.Movement.Acceleration.Length = 0 Then Return
         
         phys.Movement.Velocity.x = ComputeVelocity(phys.Movement.Velocity.x, phys.Movement.Acceleration.x, phys.Movement.Friction.x, phys.Movement.MaxVelocity.x, delta)
         phys.Movement.Velocity.y = ComputeVelocity(phys.Movement.Velocity.y, phys.Movement.Acceleration.y, phys.Movement.Friction.y, phys.Movement.MaxVelocity.y, delta)
@@ -34,12 +41,16 @@ Class PhysicsSystem Extends System<IPhysics>
     Method ApplyGravity:Void(phys:IPhysics, delta:Float)
         If phys.Gravity = Null Then Return
         
-        phys.Movement.Acceleration.x = ComputeVelocity(phys.Movement.Acceleration.x, phys.Gravity.Force.x, phys.Movement.Friction.x, 10000, delta)
-        phys.Movement.Acceleration.y = ComputeVelocity(phys.Movement.Acceleration.y, phys.Gravity.Force.y, phys.Movement.Friction.y, 10000, delta)
+        If phys.Gravity.Force.Length = 0 Then Return
+        
+        phys.Movement.Velocity.x = ComputeVelocity(phys.Movement.Velocity.x, phys.Gravity.Force.x, phys.Movement.Friction.x, phys.Movement.MaxVelocity.x, delta)
+        phys.Movement.Velocity.y = ComputeVelocity(phys.Movement.Velocity.y, phys.Gravity.Force.y, phys.Movement.Friction.y, phys.Movement.MaxVelocity.y, delta)
     End
     
     Method ApplyVelocity:Void(phys:IPhysics, delta:Float)
         If phys.Movement = Null Then Return
+        
+        if phys.Movement.Velocity.Length = 0 Then Return
         
         phys.Position.ToVector().x += phys.Movement.Velocity.x * delta
         phys.Position.ToVector().y += phys.Movement.Velocity.y * delta
