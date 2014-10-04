@@ -1,189 +1,231 @@
 <?xml version="1.0"?>
-<JiProj xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" EntryPoint=".\mgev2.monkey" Name="MGEv2">
+<JiProj xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" EntryPoint=".\tests\circle2line intersection test.monkey" Name="MGEv2">
   <Files>
-    <Document Filename=".\component\collision\aabb.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\collision\aabb.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\collision\collisioncheck.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\collision\collisioncheck.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\collision\collisionresponse.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\collision\collisionresponse.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\collision\quadtree.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\collision\quadtree.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\component.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\component.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\entity.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\entity.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\gravitycomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\gravitycomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\inputcomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\inputcomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\movementcomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\movementcomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\physicscomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\physicscomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\positioncomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\positioncomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\rendercomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\rendercomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\component\sizecomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\component\sizecomponent.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\kernel\engine.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\kernel\engine.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\system\collisionsystem.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\system\collisionsystem.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\system\inputsystem.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\system\inputsystem.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\system\movementsystem.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\system\movementsystem.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\system\rendersystem.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\system\rendersystem.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\system\system.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\system\system.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\system\testmovementsystem.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\system\testmovementsystem.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\utils\geom\circle.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\utils\geom\circle.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\utils\geom\rectangle.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\utils\geom\rectangle.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\utils\geom\segment.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\utils\geom\segment.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\utils\math\math.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\utils\geom\shape.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\utils\math\vector.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\utils\math\math.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\utils\deltatiming.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\utils\math\vector.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\utils\functions.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\src\utils\deltatiming.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+      <DocGUID />
+      <CursorPos>
+        <X>0</X>
+        <Y>0</Y>
+      </CursorPos>
+    </Document>
+    <Document Filename=".\src\utils\functions.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+      <DocGUID />
+      <CursorPos>
+        <X>0</X>
+        <Y>0</Y>
+      </CursorPos>
+    </Document>
+    <Document Filename=".\tests\circle2line intersection test.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+      <DocGUID />
+      <CursorPos>
+        <X>0</X>
+        <Y>0</Y>
+      </CursorPos>
+    </Document>
+    <Document Filename=".\tests\closestpoint_test.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+      <DocGUID />
+      <CursorPos>
+        <X>0</X>
+        <Y>0</Y>
+      </CursorPos>
+    </Document>
+    <Document Filename=".\tests\lineintersection stress.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+      <DocGUID />
+      <CursorPos>
+        <X>0</X>
+        <Y>0</Y>
+      </CursorPos>
+    </Document>
+    <Document Filename=".\tests\lineintersection test.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+      <DocGUID />
+      <CursorPos>
+        <X>0</X>
+        <Y>0</Y>
+      </CursorPos>
+    </Document>
+    <Document Filename=".\tests\vector projection test.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
@@ -198,7 +240,9 @@
       </CursorPos>
     </Document>
   </Files>
-  <CompilerConfig Configuration="debug" BuildMode="run" Target="Desktop_Game" />
-  <Version Major="14" Minor="9" Revision="15" Build="65" ProductName="Untitled product" />
-  <PreBuildCommands />
+  <CompilerConfig Configuration="debug" BuildMode="run" Target="Html5_Game" />
+  <Version Major="14" Minor="9" Revision="15" Build="65" ProductName="MGEv2" />
+  <PreBuildCommands>
+    <JIProBatch Name="" Command="" Parameters="" Enabled="false" CancelOnError="false" ExecutionMode="Process" />
+  </PreBuildCommands>
 </JiProj>
